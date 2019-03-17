@@ -23,7 +23,7 @@ class directoryEvent(LoggingEventHandler):
   def on_any_event(self, event):
     super(directoryEvent, self).on_any_event(event)
     print('\n[%s] %s is changed in directory %s' % (datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), event.src_path, args.dir))
-    print('[Run command]: %s' % args.command)
+    print('        [Run command] %s' % args.command)
     os.system('%s' % command)
 
 observer = Observer()
