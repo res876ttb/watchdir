@@ -13,5 +13,3 @@ pip install watchdog
 ```shell
 ./watchdir.py /path/to/directory "command"
 ```
-
-\*command should be quoted by ""

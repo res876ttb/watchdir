@@ -3,6 +3,7 @@
 import os, sys
 import time
 import argparse
+import datetime
 from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler
 
@@ -21,8 +22,8 @@ class directoryEvent(LoggingEventHandler):
 
   def on_any_event(self, event):
     super(directoryEvent, self).on_any_event(event)
-    print('%s is changed in directory %s' % (event.src_path, args.dir))
-    print('Run command: %s' % args.command)
+    print('[%s] %s is changed in directory %s' % (datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), event.src_path, args.dir))
+    print('[Run command]: %s' % args.command)
     os.system('%s' % command)
 
 observer = Observer()
